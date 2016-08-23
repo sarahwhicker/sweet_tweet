@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'profiles/:id' => 'profiles#show', as: :profile
+
+  get 'profiles' => 'profiles#index'
+
+  get 'profiles/index'
+
+  get 'profiles/show'
+
   get 'tweets/index'
 
   get 'tweets/show'
