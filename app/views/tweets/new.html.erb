@@ -1,34 +1,6 @@
 <h1>New Tweet</h1>
 
-<%= form_for(@tweet) do |f| %>
-	<% if @tweet.errors.any? %>
-		<div id="error_explanation">
-			<h2>
-				<%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:
-			</h2>
-			<ul>
-				<% @tweet.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+<%= render 'form' %>
 
-<!-- * This Part Is the Form * -->
-
-<div class="field form-group">
-	<%= f.label :message %><br>
-	<%= f.text_field :message %>
-</div>
-
-<div class="field form-group">
-	<%= f.hidden_field :user_id, value: current_user.id %>
-</div>
-
-<div class="actions form-group">
-	<%= f.submit class: "btn btn-sm btn-success" %>
-</div>
-
-<% end %>
-
-<%= link_to "Back to Tweets Index", tweets_path %>
+<%= link_to 'Show This Tweet', @tweet%>
+<%= link_to 'All Tweets', tweets_path %>
