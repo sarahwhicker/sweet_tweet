@@ -13,6 +13,6 @@ class User < ApplicationRecord
   has_many :inverse_friends,
   				through: :inverse_relationships
   				source: :user
-
+  has_many :likes
   validates :username, presence: true, uniqueness: true
 end
